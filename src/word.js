@@ -32,15 +32,14 @@ const word = async() => {
         font_face : 'Arial',
         font_size : 12,
     }
-  
     pObj.options.align = 'center'
     pObj.addText(dados.inst,{align : 'center',font_face : 'Arial',font_size : 12,bold:true})
     QuebraDeLinhaEmMasss(4)
-    pObj.addText('Trabalho de '+quest.articleName, centerArial)
+    pObj.addText(String('Trabalho de '+quest.articleName).toUpperCase(), centerArial)
     pObj.addLineBreak()
-    pObj.addText('Nome: '+dados.nome, centerArial )
+    pObj.addText(String('Nome: '+dados.nome).toUpperCase(), centerArial )
     pObj.addLineBreak()
-    pObj.addText('Nº '+dados.numero+' Série: '+dados.serie,centerArial)
+    pObj.addText(String('Nº '+dados.numero+' Série: '+dados.serie).toUpperCase(),centerArial)
     QuebraDeLinhaEmMasss(35)
     pObj.addText('São Paulo',centerArial)
     pObj.addLineBreak()
@@ -48,8 +47,8 @@ const word = async() => {
     pObj.addLineBreak()
     pObj1.options.align = 'justify'
     pObj1.addText(''+pesquisa.result,justifyArial)
-    let out = fs.createWriteStream('Trabalho.docx')
-
+    let out = fs.createWriteStream('Trabalho de '+quest.articleName+'.docx')
+    console.log('arquivo em word criado ;) ')
 out.on('error', function(err) {
     console.log(err)
   })

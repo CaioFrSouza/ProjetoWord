@@ -40,7 +40,8 @@ rl.question('>', resposta => {
                         "articleName": String(resposta),
                         "lang": "pt"
                     },'.config/quest.json')
-                    wiki.robot(state.load('.config/quest.json'))
+                    let pes = state.load('.config/quest.json')
+                    wiki.robot(pes)
                 })
             }, 100);
         })
